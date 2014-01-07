@@ -1,0 +1,10 @@
+Django
+celery
+celery-haystack
+django-celery
+django-debug-toolbar
+django-haystack
+flake8
+ipython
+redis
+simplejson
