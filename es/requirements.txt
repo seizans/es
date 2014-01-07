@@ -3,10 +3,9 @@ celery
 celery-haystack
 django-celery
 django-debug-toolbar
-django-haystack
+elasticsearch
 flake8
 ipython
-pyelasticsearch
 redis
-requests
 simplejson
+git+https://github.com/toastdriven/django-haystack.git
