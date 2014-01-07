@@ -7,7 +7,7 @@ from haystack import indexes
 from .models import Note
 
 
-class NoteIndex(CelerySearchIndex, indexes.INdexable):
+class NoteIndex(CelerySearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, use_template=True)
 
     title = indexes.IntegerField(model_attr='title')
