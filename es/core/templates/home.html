@@ -6,7 +6,32 @@
 
 <h2>Hello ページ</h2>
 <p>
-    {{ from_hello_view }}
+    これはテストページです。
 </p>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit">
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>タイトル</th>
+            <th>著者</th>
+            <th>本文</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for note in notes %}
+        <tr>
+            <td>{{ note.title }}</td>
+            <td>{{ note.author }}</td>
+            <td>{{ note.text }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock main %}
