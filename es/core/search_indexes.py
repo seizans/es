@@ -1,17 +1,18 @@
 # coding=utf8
 
-from celery_haystack.indexes import CelerySearchIndex
+#from celery_haystack.indexes import CelerySearchIndex
 from django.utils import timezone
 from haystack import indexes
 
 from .models import Note
 
 
-class NoteIndex(CelerySearchIndex, indexes.Indexable):
+class NoteIndex(indexes.SearchIndex, indexes.Indexable):
+#class NoteIndex(CelerySearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, use_template=True)
 
-    title = indexes.IntegerField(model_attr='title')
-    author = indexes.IntegerField(model_attr='author')
+    title = indexes.CharField(model_attr='title')
+    author = indexes.CharField(model_attr='author')
 
     created = indexes.DateTimeField(model_attr='created')
     updated = indexes.DateTimeField(model_attr='updated')
