@@ -1,0 +1,18 @@
+{% extends "_base.html" %}
+
+{% block title %}Store | Hello{% endblock title %}
+
+{% block main %}
+
+<h2>ES ページ</h2>
+<p>
+    これはテストページです。
+</p>
+
+{% for result in query %}
+{{ result.content_type }}
+<br />
+{{ result.get_stored_fields }}
+{% endfor %}
+
+{% endblock main %}
